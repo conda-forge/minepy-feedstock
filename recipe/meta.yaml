@@ -29,13 +29,13 @@ test:
     - minepy
 
 about:
-  home: "http://minepy.readthedocs.io"
-  license: "GPL-3.0"
-  license_family: "LGPL"
+  home: http://minepy.readthedocs.io
+  license: GPL-3.0-only
+  license_family: LGPL
   license_file: gpl-3.0.txt
-  summary: "minepy - Maximal Information-based Nonparametric Exploration"
-  doc_url: "http://minepy.readthedocs.io"
-  dev_url: "https://github.com/minepy/minepy"
+  summary: minepy - Maximal Information-based Nonparametric Exploration
+  doc_url: http://minepy.readthedocs.io
+  dev_url: https://github.com/minepy/minepy
 
 extra:
   recipe-maintainers:
