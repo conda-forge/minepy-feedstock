@@ -1,17 +1,17 @@
 {% set name = "minepy" %}
-{% set version = "1.2.5" %}
+{% set version = "1.2.6" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f488a1bc8de9e4c1043e3fe090682378266eb445d632a68f30b815268c31b918
+  sha256: 7455c5d2edee63b660593343d2876bf5e0a2e41cfd74a29d9e42fd00022f39f9
 
 build:
-  number: 2
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  number: 0
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   build:
