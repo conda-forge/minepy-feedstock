@@ -16,7 +16,6 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - setuptools
   host:
     - numpy >=1.3.0
     - pip
