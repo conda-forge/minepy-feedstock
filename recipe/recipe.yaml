@@ -1,0 +1,47 @@
+schema_version: 1
+
+context:
+  name: minepy
+  version: 1.2.6
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 7455c5d2edee63b660593343d2876bf5e0a2e41cfd74a29d9e42fd00022f39f9
+
+build:
+  number: 3
+  script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+  host:
+    - numpy >=1.3.0, <2
+    - pip
+    - python
+    - setuptools
+  run:
+    - ${{ pin_compatible('numpy', lower_bound='1.3.0', upper_bound='2.0.0') }}
+    - python
+
+tests:
+  - python:
+      imports:
+        - minepy
+
+about:
+  license: GPL-3.0-only
+  license_file: gpl-3.0.txt
+  summary: minepy - Maximal Information-based Nonparametric Exploration
+  homepage: http://minepy.readthedocs.io
+  repository: https://github.com/minepy/minepy
+  documentation: http://minepy.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - philip-khor
